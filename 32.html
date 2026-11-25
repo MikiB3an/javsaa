@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mana spēle</title>
+<title>Taxi Reaper</title>
 <style>
 /* Pamata izkārtojums — šīs rindas nemaini */
 body { font-family: Arial, sans-serif; max-width: 680px; margin: 24px auto; padding: 16px; line-height: 1.6; background-color: #f8fafc; color: #1e293b; }
@@ -18,14 +18,15 @@ img { max-width: 100%; height: auto; }
 </style>
 </head>
 <body>
-<h1>Spēlētāja punktu aprēķins</h1>
+<h1>Taxi Reaper</h1>
+<p id="noteikumi">Viena zvaigzne dod 10 punktus un spēlētājs saņem 5 sākuma punktus.</p>
 <!-- 2. un 3. UZDEVUMS: šeit zem virsraksta pievieno <p id="noteikumi"> rindkopu ar punktu noteikumiem -->
 <div class="panelis">
   <label for="vards">Spēlētāja vārds</label>
-  <input id="vards" value="Spēlētājs">
+  <input id="vards" value="Sams">
 
   <label for="skaits">Savākto zvaigžņu skaits</label>
-  <input id="skaits" type="number" min="0" value="2">
+  <input id="skaits" type="number" min="0" value="1">
 
   <button onclick="paradit()">Aprēķināt punktus</button>
   <p id="atbilde">Nospied pogu, lai redzētu rezultātu.</p>
@@ -38,7 +39,7 @@ function paradit() {
   const skaits = Number(document.getElementById("skaits").value);
 
   // === 2. un 3. UZDEVUMS — MAINI ŠEIT: punktu aprēķina formula ===
-  const punkti = skaits * 5;
+  const punkti = skaits * 10 + 5;
 
   // === GATAVĀ DAĻA — parāda aprēķināto atbildi lapā ===
   document.getElementById("atbilde").textContent = vards + ": " + punkti + " punkti";
